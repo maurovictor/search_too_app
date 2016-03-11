@@ -9,9 +9,8 @@ class SearchToolController < ApplicationController
   
   def upload(file=params[:file], country=params[:country], code_area=params[:code_area])
   	path = file.path()
-  	$links = make_csv(path, country)
-  	$path1 = file.path()
-  	redirect_to '/search_tool/index'
+  	file4download = make_csv(path, country)
+  	send_file file4download
   end
 
   def download

@@ -9,7 +9,7 @@ module SearchToolHelper
 			links_array << l[0].to_s.split("/").last
 		end
 		file_name = "#{country}'s_st_contacts.csv"
-		contact_list = CSV.open(file_name, "wb") do |csv|
+		CSV.open(file_name, "wb") do |csv|
 			csv << ["Name", "E-mail Address","Mobile Phone"]
 			links_array.each do |id|		
 				request = "https://gis-api.aiesec.org:443/v1/people/#{id}.json?access_token=#{session[:expa_token]}"
@@ -37,7 +37,7 @@ module SearchToolHelper
 				end
 			end
 		end
-		
-		return links_array
+
+		return file_name
 	end
 end
