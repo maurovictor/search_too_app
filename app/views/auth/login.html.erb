@@ -1,0 +1,13 @@
+<div class="login-title"><h1>Auth#login</h1></div>
+<div class="center">
+	<%= form_tag(:action => :auth_expa, :controller => :auth) do %>
+	Email: 
+	<%= email_field_tag 'my_email'%> </br>  </br>
+	Senha:
+	<%= password_field_tag 'my_password'%> </br>
+	</br>
+	<div class="login_btn">
+	<%= submit_tag 'iniciar' %>
+	<% end %>
+	</div>
+</div>

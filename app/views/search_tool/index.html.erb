@@ -1,0 +1,38 @@
+<div class="base-card">
+<h2 class="title"> #Search-Tool Contacts </h2>
+
+<div class="upload-card">
+<div class="form">
+<%= form_tag({action: :upload}, multipart: true) do %>
+	<%= label_tag 'País' %>
+	<%= text_field_tag 'country' %>
+	<br/>
+	<br/>
+	<%= label_tag 'Código'%>
+	<%= number_field_tag 'code_area'%>
+	<br/>
+	<br/>
+	<%= file_field_tag("file")%>
+	<br/>
+	<%= submit_tag "Upload"%> 
+<% end %>
+</div>
+</div>
+
+<div class="download-card">
+<div class="form">
+ <%= button_tag("Download") %>
+</div>
+	
+</div>
+
+</div>
+
+<div class="sair">
+	<%= link_to('sair', '/auth/logout', method: 'post') %>
+</div>
+<%= $path1 %>
+<%= $path2 %>
+<%= $links %>
+
+
