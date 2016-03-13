@@ -27,8 +27,6 @@ gem 'mechanize', '~> 2.7', '>= 2.7.3'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
-gem 'sqlite3', group: :development
-
 gem 'pg', group: :production
 
 gem 'rails_12factor', group: :production
@@ -44,6 +42,7 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3', group: :development
   gem 'byebug'
 end
 
