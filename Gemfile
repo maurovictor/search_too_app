@@ -46,6 +46,8 @@ group :development, :test do
   gem 'byebug'
 end
 
+ruby "2.2.2"
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -55,4 +57,4 @@ group :development do
 end
 
 
-ruby "2.2.2"
+
