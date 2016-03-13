@@ -2,7 +2,7 @@ require 'csv'
 require 'net/http'
 
 module SearchToolHelper
-	def make_csv(file, country)
+	def make_csv(file, country, code)
 		read_sheet = CSV.read("#{file}")
 		links_array = Array.new
 		read_sheet.each do |l|	
@@ -19,6 +19,14 @@ module SearchToolHelper
 				if current_person['contact_info']
 					if current_person['contact_info']['phone'] and current_person['contact_info']['phone'] != ""
 						phone = current_person['contact_info']['phone'].delete("-").delete(" ").delete("+").delete("(").delete(")")
+						if phone[0]=='0'
+							phone[0]=''
+						end 
+						unless phone[0...code.length]==code
+							phone = code.chomp+phone
+						end
+						$test_code = code
+						phone.insert(0,"+")
 					end
 					email = current_person['contact_info']['email']
 					if current_person['contact_info'] == nil
